@@ -1,0 +1,21 @@
+spring:
+  application:
+    name=Prueba-Tecnica
+  datasource:
+
+    url: jdbc:postgresql://${DB_HOST:ec2-52-23-71-203.compute-1.amazonaws.com}:${DB_PORT:5732}/${DB_DATABASE:prueba_tecnica_db}
+
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:181277}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      #ddl-auto: create-drop
+      #ddl-auto: create-only
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
